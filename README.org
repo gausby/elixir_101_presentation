@@ -86,7 +86,6 @@ Notice that module names are written in CamelCase, and function names within are
 
 Functions in Elixir are defined by their name and their arity; this means we can have multiple functions with the name name that accept different numbers of arguments, and that is why a given function name in the documentation is referred to with a trailing slash and a number—the name and the number of arguments—like ~Enum.reduce/2~, ~Enum.reduce/3~, etc.
 
-*** State
 **** Pattern Matching and Functions
 The stuff we learned about pattern matching in the pattern matching section works for function argument lists as well. We can assert expected data and the first function that match will get run.
 
@@ -122,6 +121,8 @@ Not all expressions are allowed in guards clauses; only basic logic and checks. 
 
 **** What are the benefits of immutable data?
 
+*** Polymorphism
+*** State
 *** Processes
 **** The Actor Model
 **** Isolation, shared nothing
