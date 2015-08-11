@@ -1,0 +1,49 @@
+#+TITLE: Elixir 101
+#+AUTHOR: Martin Gausby
+
+* Elixir
+
+
+** Some definitions
+*** Erlang
+*** Elixir
+*** Beam
+*** OTP
+*** Processes
+
+** How Elixir relates to Erlang, OTP, and Beam
+
+** State
+
+** Immutable data
+
+** Processes
+*** The Actor Model
+*** Isolation, shared nothing
+*** Isolated failures
+
+** Fault Tolerance
+
+** Documentation as a first-class citizen
+
+** How to communicate OTP
+*** Trees for supervision
+*** Message sequence charts for inter process communication
+
+
+** Resources for learning Elixir
+*** The getting started guides on elixirlang.org
+**** introduction to the language itself
+**** there's also a great OTP and Mix introduction
+**** even a macro guide
+
+*** Books
+**** Dave Thomas
+Does an excellent job of teaching pattern matching and recursive functions and thinking, but
+
+**** Saša Jurić
+If you have read The Elixir Language by Dave Thomas you should pick up Jurić's book and skip the first part. This one goes
+
+*** IRC
+**** #cphex on freenode
+**** #elixir-lang on freenode
