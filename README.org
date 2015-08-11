@@ -38,11 +38,13 @@
 **** even a macro guide
 
 *** Books
-**** Dave Thomas
-Does an excellent job of teaching pattern matching and recursive functions and thinking, but
+If you are only going to buy two Elixir books I would recommend:
 
-**** Saša Jurić
-If you have read The Elixir Language by Dave Thomas you should pick up Jurić's book and skip the first part. This one goes
+**** Programming Elixir by Dave Thomas
+Does an excellent job of teaching pattern matching and recursive functions and thinking, but it does not go into great detail of processes, supervision, OTP, and the like.
+
+**** Elixir in Action by Saša Jurić
+If you have read Programming Elixir by Dave Thomas you should pick up Jurić's book and skip the first part. This one does a great job of explaining OTP. Not only does it tell you how, but it also gives an answer to they whys.
 
 *** IRC
 **** #cphex on freenode
