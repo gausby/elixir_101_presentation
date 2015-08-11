@@ -49,7 +49,26 @@ case File.read("/etc/hosts") do
 end
 #+END_SRC
 
-*** Modules
+*** Modules and functions
+Functions in Elixir are, like any other good functional language, data, and can be assigned to variables; passed into functions as arguments; and returned from functions.
+
+#+BEGIN_SRC elixir
+square = fn x ->
+  x * x
+end
+#+END_SRC
+
+An anonymous function that takes one argument are now bound to the variable ~square~. To execute an anonymous function we need to write this incarnation:
+
+#+BEGIN_SRC elixir
+square.(10)
+#+END_SRC
+
+Which of course returns ~100~.
+
+A thing to notice here: In most languages we would have to write a ~return~-keyword to have the function return something. We do not need to do that in Elixir; the last evaluated statement in the function body is the return value. This might take some time getting used to, but just returning the value of the last expression is really neat; a function will never return something in the middle of the body, and it removes some syntactic noise.
+
+Speaking of removing syntactic noise: Notice that there was no parentheses around the function argument. They could have been there; they are optional—except for the cases where they are required to solve ambiguity.
 
 *** State
 
