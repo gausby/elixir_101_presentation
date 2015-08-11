@@ -15,9 +15,41 @@
 
 ** Where Elixir differs from what you are used to
 
-*** Modules
-
 *** Pattern Matching
+You might be used to variables where you can bind a value. For instance, if we bind ~a~ to ~5~ like so in JavaScript
+
+#+BEGIN_SRC javascript
+// in JavaScript
+var a = 5
+#+END_SRC
+
+~a~ will be ~5~ from then on. This would be the same in Elixir, but we would not have to declare that we are creating a variable or define what type it has:
+
+#+BEGIN_SRC elixir
+# in elixir
+a = 5
+#+END_SRC
+
+But where the Elixir ~=~ operator differentiate itself from the JavaScript one is in the fact that it is a match operator rather than an assignment operator. ~=~ will match the left-hand side with the right-hand side and assert values if they fit; if they do not an exception will get raised.
+
+#+BEGIN_SRC elixir
+{a, b, c} = {:symbol, "hello", 42}
+#+END_SRC
+
+In this case ~a~, ~b~, and ~c~ will get the values, respectively, ~:symbol~, ~"hello"~, and ~42~.
+
+A common pattern in Elixir (and Erlang) is to return a tuple with the symbol ~:error~ and a string containing the reason for the error, or a tuple containing ~:ok~ and the value from the operation. This can be used to handle error and success cases in an elegant fashion.
+
+#+BEGIN_SRC elixir
+case File.read("/etc/hosts") do
+  {:ok, content} ->
+    do_stuff_with(content)
+  {:error, reason} ->
+    Mix.raise("Could not read hosts file because of: #{reason}")
+end
+#+END_SRC
+
+*** Modules
 
 *** State
 
