@@ -87,7 +87,37 @@ Notice that module names are written in CamelCase, and function names within are
 Functions in Elixir are defined by their name and their arity; this means we can have multiple functions with the name name that accept different numbers of arguments, and that is why a given function name in the documentation is referred to with a trailing slash and a number—the name and the number of arguments—like ~Enum.reduce/2~, ~Enum.reduce/3~, etc.
 
 *** State
+**** Pattern Matching and Functions
+The stuff we learned about pattern matching in the pattern matching section works for function argument lists as well. We can assert expected data and the first function that match will get run.
 
+#+BEGIN_SRC elixir
+defmodule Validator do
+  def handle_result({:invalid, issues}) do
+    # create a report from the data stored in issues
+  end
+  def handle_result({:valid, _}) do
+    # write a success message
+  end
+end
+#+END_SRC
+
+Notice, when we use the underscore as a variable name that match is ignored. This is important, because sometimes we are simply not interested in the value contained in the field, and we do not want to get an unused assignment error from the compiler.
+
+**** Guard Clauses
+Sometimes pattern matching is not enough, for instance we cannot express that we want a list with more than, or less than, a specified number of elements. To solve this problem we can use guard clauses specified with the keyword ~with~:
+
+#+BEGIN_SRC elixir
+defmodule MyList do
+  def long_list?(list) when length(list) > 10 do
+    true
+  end
+  def long_list?(list) do
+    false
+  end
+end
+#+END_SRC
+
+Not all expressions are allowed in guards clauses; only basic logic and checks. See the documentation for the full list.
 *** Immutable data
 
 **** What are the benefits of immutable data?
