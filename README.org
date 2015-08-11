@@ -13,23 +13,34 @@
 
 ** How Elixir relates to Erlang, OTP, and Beam
 
-** State
+** Where Elixir differs from what you are used to
 
-** Immutable data
+*** Modules
 
-** Processes
-*** The Actor Model
-*** Isolation, shared nothing
-*** Isolated failures
+*** Pattern Matching
+
+*** State
+
+*** Immutable data
+
+**** What are the benefits of immutable data?
+
+*** Processes
+**** The Actor Model
+**** Isolation, shared nothing
+**** Isolated failures
 
 ** Fault Tolerance
+
+** Tooling
+*** Mix
+*** Editor support
 
 ** Documentation as a first-class citizen
 
 ** How to communicate OTP
 *** Trees for supervision
 *** Message sequence charts for inter process communication
-
 
 ** Resources for learning Elixir
 *** The getting started guides on elixirlang.org
