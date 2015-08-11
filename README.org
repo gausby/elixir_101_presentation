@@ -60,3 +60,6 @@ If you have read Programming Elixir by Dave Thomas you should pick up Jurić's b
 *** IRC
 **** #cphex on freenode
 **** #elixir-lang on freenode
+
+*** Copenhagen Elixir and Erlang
+We organize meet ups and events using GitHub issues. If you want to learn how to do something in Elixir you could suggest an event and we will help each other find a suitable venue, create learning material, and communicate the event to the public.
