@@ -70,6 +70,22 @@ A thing to notice here: In most languages we would have to write a ~return~-keyw
 
 Speaking of removing syntactic noise: Notice that there was no parentheses around the function argument. They could have been there; they are optional—except for the cases where they are required to solve ambiguity.
 
+We can do named functions as well, but they need to be inside a module. A module can be defined with ~defmodule~ like so, and inside that we can use ~def~ and ~defp~ to create public and private functions:
+
+#+BEGIN_SRC elixir
+defmodule Math do
+  def square x do
+    x * x
+  end
+end
+#+END_SRC
+
+We can now get 10 squared by writing ~Math.square 10~.
+
+Notice that module names are written in CamelCase, and function names within are written in snake_case (like ~my_function_name~).
+
+Functions in Elixir are defined by their name and their arity; this means we can have multiple functions with the name name that accept different numbers of arguments, and that is why a given function name in the documentation is referred to with a trailing slash and a number—the name and the number of arguments—like ~Enum.reduce/2~, ~Enum.reduce/3~, etc.
+
 *** State
 
 *** Immutable data
