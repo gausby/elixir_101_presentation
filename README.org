@@ -189,8 +189,9 @@ Not all expressions are allowed in guards clauses; only basic logic and checks. 
 
 ** Tooling
 *** Mix
+*** Hex.pm
 *** Editor support
-
+*** :observer.start
 ** Documentation as a first-class citizen
 
 ** How to communicate OTP
