@@ -204,8 +204,15 @@ So, whenever you need to keep state around you will have to look into the GenSer
 The processes in Elixir should be familiar to you if you know about the actor model pattern.
 
 *** Polymorphism
+*** TODO Polymorphism
+There are a couple of tricks for code reuse in Elixir:
 
-** Fault Tolerance
+Modules can be imported into another, making the functions from one module available in another.
+
+Modules can define a Behaviour that other modules can adapt.
+
+But Protocols gives provides polymorphism for data structures in Elixir.
+
 **** Isolation, shared nothing
 **** Isolated failures
 
