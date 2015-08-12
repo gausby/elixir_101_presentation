@@ -178,14 +178,37 @@ end
 
 Not all expressions are allowed in guards clauses; only basic logic and checks. See the documentation for the full list.
 
-*** Polymorphism
-*** State
-*** Processes
+*** Processes and State
+If you come from an object oriented background you might think that we spin up some kind of instance of a Module and keep our state there. That is not the case for Elixir. The modules are only for grouping related functions together; not for keeping state around. It is true that we can define a Module to have a behavior that helps dealing with state, but in reality the state is kept in a process of its own.
+
+One of the modules that helps us deal with state is the Agent module, build into Elixir core.
+
+#+BEGIN_SRC elixir
+{:ok, pid} = Agent.start_link(fn -> [] end)
+Agent.get(pid, fn state -> state end) # => []
+Agent.update(pid, fn state -> ["hello, world!"|state] end)
+Agent.get(pid, fn state -> state end) # => ["hello, world!"]
+#+END_SRC
+
+Notice that we get a process identifier, that we in this case refer to as ~pid~. This process identifier has to be passed to all the functions we call on the Agent module.
+
+Also notice that ~Agent.update/2~ update the state with what the executed expression returned.
+
+Imagine the process retrieves that data it need to store. It stores it by blocking and when something calls it, it send what it is holding onto and either transform the data to something new; or keeping the data unchanged for the next call.
+
+The Agent module is an abstraction on the more generic "GenServer" type; The Agent is all about storing a state, whereas another specialized Module called the "Task" is all about executing a task asynchronously.
+
+So, whenever you need to keep state around you will have to look into the GenServer module and Agent.
+
 **** The Actor Model
+The processes in Elixir should be familiar to you if you know about the actor model pattern.
+
+*** Polymorphism
+
+** Fault Tolerance
 **** Isolation, shared nothing
 **** Isolated failures
 
-** Fault Tolerance
 
 ** Tooling
 *** Mix
