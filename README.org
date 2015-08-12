@@ -2,8 +2,6 @@
 #+AUTHOR: Martin Gausby
 
 * Elixir
-
-
 ** Some definitions
 *** Erlang
 A programming language made by the Ericsson Corperation in the late eighties, and open sourced in the late nineties. It is build for handling massive amounts of simultaneous connections, is highly concurrent, and easy to distribute; just what Ericsson needed for building telephone switches.
@@ -203,7 +201,6 @@ So, whenever you need to keep state around you will have to look into the GenSer
 **** The Actor Model
 The processes in Elixir should be familiar to you if you know about the actor model pattern.
 
-*** Polymorphism
 *** TODO Polymorphism
 There are a couple of tricks for code reuse in Elixir:
 
@@ -213,22 +210,23 @@ Modules can define a Behaviour that other modules can adapt.
 
 But Protocols gives provides polymorphism for data structures in Elixir.
 
+** TODO Fault Tolerance
 **** Isolation, shared nothing
 **** Isolated failures
 
-
-** Tooling
+** TODO Tooling
 *** Mix
 *** Hex.pm
 *** Editor support
 *** :observer.start
-** Documentation as a first-class citizen
 
-** How to communicate OTP
+** TODO Documentation as a first-class citizen
+
+** TODO How to communicate OTP
 *** Trees for supervision
 *** Message sequence charts for inter process communication
 
-** Resources for learning Elixir
+** TODO Resources for learning Elixir
 *** The getting started guides on elixirlang.org
 **** introduction to the language itself
 **** there's also a great OTP and Mix introduction
