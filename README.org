@@ -44,7 +44,7 @@ numbers = Enum.reverse numbers
 IO.inspect numbers # => [3, 2, 1]
 #+END_SRC
 
-Rebinding values like this is possible in Elixir. Erlang would throw an exception, and with good reason as it support single-assignment by design. Personally, after programming in a programming language with immutable data, I do not like rebinding variables like that; rebinding makes code hard to follow, especially if a variable is mutated deeply inside of nested if-statements.
+Rebinding values like this is possible in Elixir. Erlang would throw an exception, and with good reason as it support single-assignment by design. Personally, after programming in a programming language with immutable data, I do not like rebinding variables like that; rebinding makes code hard to follow, especially if a variable is rebound somewhere inside of a deeply nested if-statement.
 
 The previous example could be written with the pipe-operator (~|>~) like this:
 
