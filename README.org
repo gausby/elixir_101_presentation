@@ -15,6 +15,50 @@
 
 ** Where Elixir differs from what you are used to
 
+*** Immutable data
+Because of the distributed nature of the underlying run time immutable data structures are a necessity. When you send some data to be calculated on a remote process it is good to know that nothing from the outside will, or can, change that data.
+
+This means that you can create data, but never modify data: When you transform data you will create new data.
+
+In JavaScript you are able to create and mutate data like this:
+
+#+BEGIN_SRC javascript
+var numbers = [1, 2, 3]
+numbers.reverse() // mutation
+console.log(numbers) // => [3, 2, 1]
+#+END_SRC
+
+In Elixir this is not possible:
+
+#+BEGIN_SRC elixir
+numbers = [1, 2, 3]
+Enum.reverse numbers
+IO.inspect numbers # => [1, 2, 3]
+#+END_SRC
+
+If we really want ~numbers~ to be mutated we can rebind the reversed version of ~numbers~ to ~numbers~, like so:
+
+#+BEGIN_SRC elixir
+numbers = [1, 2, 3]
+numbers = Enum.reverse numbers
+IO.inspect numbers # => [3, 2, 1]
+#+END_SRC
+
+Rebinding values like this is possible in Elixir. Erlang would throw an exception, and with good reason as it support single-assignment by design. Personally, after programming in a programming language with immutable data, I do not like rebinding variables like that; rebinding makes code hard to follow, especially if a variable is mutated deeply inside of nested if-statements.
+
+The previous example could be written with the pipe-operator (~|>~) like this:
+
+#+BEGIN_SRC elixir
+numbers = [1, 2, 3] |> Enum.reverse
+IO.inspect numbers # => [3, 2, 1]
+#+END_SRC
+
+The pipe-operator takes the return value and apply it as the first argument to the succeeding function.
+
+If you ever find yourself rebinding variables you should reach for the pipe-operator, or write a helper function with a name that describes the transformation.
+
+**** TODO describe how immutable data allows for better memory management using linked lists
+
 *** Pattern Matching
 You might be used to variables where you can bind a value. For instance, if we bind ~a~ to ~5~ like so in JavaScript
 
@@ -117,9 +161,6 @@ end
 #+END_SRC
 
 Not all expressions are allowed in guards clauses; only basic logic and checks. See the documentation for the full list.
-*** Immutable data
-
-**** What are the benefits of immutable data?
 
 *** Polymorphism
 *** State
