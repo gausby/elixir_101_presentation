@@ -6,12 +6,28 @@
 
 ** Some definitions
 *** Erlang
+A programming language made by the Ericsson Corperation in the late eighties, and open sourced in the late nineties. It is build for handling massive amounts of simultaneous connections, is highly concurrent, and easy to distribute; just what Ericsson needed for building telephone switches.
+
 *** Elixir
-*** Beam
-*** OTP
+A programming language build on top of the BEAM virtual machine, created by José Valim. He had been working on threads and concurrency in the Ruby language, and had found that too difficult and neigh impossible to handle and implement. He started looking for how other languages handled concurrency, and found Erlang to be particularly interesting, but that the ecosystem lacked tooling.
+
+«I loved what I saw, but hated what I didn't see.»—Jose Valim
+
+Elixir has reached 1.0 some time ago, and it features all the good parts about Erlang, as well as a macro system for extending the language and building domain specific languages (DSL), documentation as first-class citizens and easy to use tooling.
+
+*** BEAM
+Bogdan/Björn's Erlang Abstract Machine. The currently most popular virtual machine for running beam-bytecode.
+
 *** Processes
+When we refer to a process we do not mean an operating system process—those are heavy—we mean light weight processes that the BEAM VM handles and are capable of handling in the hundreds of thousands (or even millions, if you have a beefy computer).
+
+*** OTP, Open Telecom Platform
+A framework for building highly available and fault tolerant systems; does not have to be telecom, but telecom was, according to the legend, a buzz word within Ericsson when they created the project; so was Open and Platform.
 
 ** How Elixir relates to Erlang, OTP, and Beam
+Naysayers will often describe Elixir as CoffeeScript for Erlang; which is an unfair statement. Where CoffeeScript is a language that compiles to JavaScript, and then in turn compiles to JavaScript-byte code, Elixir is not compiled to Erlang and then to Beam-byte code: Elixir is a language that compiles directly to Beam-byte code; in the same manner languages like Clojure and Scala compiles directly to Java-byte code.
+
+Because Erlang and Elixir compile to the same byte code they can be used interchangeably; Elixir core calls Erlang code all the time, and rely heavily on OTP and the various support tools like Dialyzer (a type checking tool).
 
 ** Where Elixir differs from what you are used to
 
